@@ -29,3 +29,10 @@ RUN install2.r --error \
  && R -e 'devtools::install_github("pachterlab/sleuth")' \
  && R -e 'devtools::install_github("thomasp85/patchwork")' \
  && rm -rf /tmp/downloaded_packages /tmp/*.rds
+
+
+# Additional R packages
+RUN install2.r --error \
+ --deps TRUE \
+ shinycssloaders \
+&& rm -rf /tmp/downloaded_packages
