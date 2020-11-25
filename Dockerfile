@@ -1,6 +1,6 @@
 FROM rocker/verse
 
-RUN sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install libhdf5-dev
+RUN sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y install libhdf5-dev libgsl-dev
 
 RUN sudo R -e 'install.packages(c("BiocManager","MASS","mgcv","nlme"))' \
  && install2.r --error --deps TRUE devtools \
